@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <hr>
+
+    <form>
+
+        <!-- Student Name -->
+
+        <label for="name">
+            Full Name:
+        </label>
+
+        <br>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            required>
+
+        <br><br>
+
+        <!-- Email -->
+
+        <label for="email">
+            Email Address:
+        </label>
+
+        <br>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required>
+
+        <br><br>
+
+        <!-- Password -->
+
+        <label for="password">
+            Password:
+        </label>
+
+        <br>
+
+        <input
+            type="password"
+            id="password"
+            minlength="6"
+            required>
+
+        <br><br>
+
+        <!-- Phone Number -->
+
+        <label for="phone">
+            Phone Number:
+        </label>
+
+        <br>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="9876543210"
+            pattern="[0-9]{10}"
+            required>
+
+        <br><br>
+
+        <!-- Age -->
+
+        <label for="age">
+            Age:
+        </label>
+
+        <br>
+
+        <input
+            type="number"
+            id="age"
+            min="17"
+            max="30"
+            required>
+
+        <br><br>
+
+        <!-- Date of Birth -->
+
+        <label for="dob">
+            Date of Birth:
+        </label>
+
+        <br>
+
+        <input
+            type="date"
+            id="dob">
+
+        <br><br>
+
+        <!-- Gender -->
+
+        <label>
+            Gender:
+        </label>
+
+        <br>
+
+        <input
+            type="radio"
+            name="gender"
+            value="male">
+
+        Male
+
+        <input
+            type="radio"
+            name="gender"
+            value="female">
+
+        Female
+
+        <input
+            type="radio"
+            name="gender"
+            value="other">
+
+        Other
+
+        <br><br>
+
+        <!-- Department -->
+
+        <label for="department">
+            Department:
+        </label>
+
+        <br>
+
+        <select id="department">
+
+            <option value="">
+                Select Department
+            </option>
+
+            <option>
+                Information Technology
+            </option>
+
+            <option>
+                Computer Science Engineering
+            </option>
+
+            <option>
+                Electronics and Communication
+            </option>
+
+            <option>
+                Mechanical Engineering
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <!-- Skills -->
+
+        <label>
+            Technical Skills:
+        </label>
+
+        <br>
+
+        <input type="checkbox">
+        HTML
+
+        <br>
+
+        <input type="checkbox">
+        CSS
+
+        <br>
+
+        <input type="checkbox">
+        JavaScript
+
+        <br>
+
+        <input type="checkbox">
+        Python
+
+        <br>
+
+        <input type="checkbox">
+        Java
+
+        <br><br>
+
+        <!-- Address -->
+
+        <label for="address">
+            Address:
+        </label>
+
+        <br>
+
+        <textarea
+            id="address"
+            rows="5"
+            cols="40"
+            placeholder="Enter your address">
+        </textarea>
+
+        <br><br>
+
+        <!-- Resume Upload -->
+
+        <label for="resume">
+            Upload Resume:
+        </label>
+
+        <br>
+
+        <input
+            type="file"
+            id="resume">
+
+        <br><br>
+
+        <!-- Color -->
+
+        <label>
+            Favorite Color:
+        </label>
+
+        <br>
+
+        <input type="color">
+
+        <br><br>
+
+        <!-- Experience -->
+
+        <label>
+            Programming Knowledge Level:
+        </label>
+
+        <br>
+
+        Beginner
+
+        <input
+            type="range"
+            min="0"
+            max="100">
+
+        Expert
+
+        <br><br>
+
+        <!-- Terms -->
+
+        <input
+            type="checkbox"
+            required>
+
+        I agree to the Terms and Conditions.
+
+        <br><br>
+
+        <!-- Buttons -->
+
+        <button type="submit">
+            Register
+        </button>
+
+        <button type="reset">
+            Reset
+        </button>
+
+    </form>
+
+    <hr>
+
+    <footer>
+
+        <p>
+            © 2026 Student Registration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
