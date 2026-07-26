@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Registration  InnoLift Ventures</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span>Account created successfully!</span>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- Brand Bar -->
+    <div class="brand-bar">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.5C16.5 22.15 20 17.25 20 12V6L12 2z"/></svg>
+      </div>
+      <span class="brand-name">InnoLift Ventures</span>
+    </div>
+
+    <!-- Page Heading -->
+    <div class="page-heading">
+      <h1>Create your account</h1>
+      <p>Fill in your details below to register for the Full Stack Track 2026.</p>
+    </div>
+
+    <!-- Progress Stepper -->
+    <div class="stepper">
+      <div class="step-item active" id="si1">
+        <div class="step-num">1</div>
+        <span class="step-text">Personal</span>
+      </div>
+      <div class="step-connector" id="sc1"></div>
+      <div class="step-item" id="si2">
+        <div class="step-num">2</div>
+        <span class="step-text">Contact</span>
+      </div>
+      <div class="step-connector" id="sc2"></div>
+      <div class="step-item" id="si3">
+        <div class="step-num">3</div>
+        <span class="step-text">Address</span>
+      </div>
+      <div class="step-connector" id="sc3"></div>
+      <div class="step-item" id="si4">
+        <div class="step-num">4</div>
+        <span class="step-text">Account</span>
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="regForm" novalidate>
+
+      <!-- Section 1: Personal Information -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Personal Information</h2>
+          <p>Tell us about yourself</p>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+
+            <div class="field">
+              <label for="firstName">First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" />
+              <span class="err-msg" id="firstNameErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last Name <span class="req">*</span></label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" />
+              <span class="err-msg" id="lastNameErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="dob">Date of Birth <span class="req">*</span></label>
+              <input type="date" id="dob" name="dob" autocomplete="bday" />
+              <span class="err-msg" id="dobErr"></span>
+            </div>
+
+            <div class="field">
+              <label id="genderLabel">Gender <span class="req">*</span></label>
+              <div class="radio-group" role="radiogroup" aria-labelledby="genderLabel">
+                <label><input type="radio" name="gender" value="male" /> Male</label>
+                <label><input type="radio" name="gender" value="female" /> Female</label>
+                <label><input type="radio" name="gender" value="other" /> Other</label>
+              </div>
+              <span class="err-msg" id="genderErr"></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Contact Information -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Contact Information</h2>
+          <p>How can we reach you?</p>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+
+            <div class="field">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+              <span class="err-msg" id="emailErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" maxlength="10" placeholder="10-digit mobile" />
+              <span class="err-msg" id="phoneErr"></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Address Details -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Address Details</h2>
+          <p>Where are you based?</p>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+
+            <div class="field full">
+              <label for="address">Street Address <span class="req">*</span></label>
+              <textarea id="address" name="address" autocomplete="street-address" placeholder="House / flat no., street, area…"></textarea>
+              <span class="err-msg" id="addressErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="city">City <span class="req">*</span></label>
+              <input type="text" id="city" name="city" autocomplete="address-level2" />
+              <span class="err-msg" id="cityErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="state">State / Territory <span class="req">*</span></label>
+              <select id="state" name="state">
+                <option value="" disabled selected>Select state…</option>
+                <optgroup label="States">
+                  <option>Andhra Pradesh</option>
+                  <option>Arunachal Pradesh</option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chhattisgarh</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Haryana</option>
+                  <option>Himachal Pradesh</option>
+                  <option>Jharkhand</option>
+                  <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Manipur</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>Tamil Nadu</option>
+                  <option>Telangana</option>
+                  <option>Tripura</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Uttarakhand</option>
+                  <option>West Bengal</option>
+                </optgroup>
+                <optgroup label="Union Territories">
+                  <option>Andaman and Nicobar Islands</option>
+                  <option>Chandigarh</option>
+                  <option>Dadra and Nagar Haveli and Daman and Diu</option>
+                  <option>Delhi (NCT)</option>
+                  <option>Jammu and Kashmir</option>
+                  <option>Ladakh</option>
+                  <option>Lakshadweep</option>
+                  <option>Puducherry</option>
+                </optgroup>
+              </select>
+              <span class="err-msg" id="stateErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="pincode">Pincode <span class="req">*</span></label>
+              <input type="text" id="pincode" name="pincode" maxlength="6" placeholder="6-digit pincode" />
+              <span class="err-msg" id="pincodeErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="country">Country</label>
+              <input type="text" id="country" value="India" readonly tabindex="-1" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Account Setup -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Account Setup</h2>
+          <p>Create your login credentials</p>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+
+            <div class="field">
+              <label for="username">Username <span class="req">*</span></label>
+              <input type="text" id="username" name="username" autocomplete="username" placeholder="min 4 characters" />
+              <div class="status-msg" id="usernameStatus"></div>
+              <span class="err-msg" id="usernameErr"></span>
+            </div>
+
+            <div class="field">
+              <label for="confirmPw">Confirm Password <span class="req">*</span></label>
+              <div class="pw-wrap">
+                <input type="password" id="confirmPw" name="confirmPw" autocomplete="new-password" />
+                <button type="button" class="eye-btn" id="eyeBtn2" aria-label="Toggle confirm password visibility">
+                  <svg id="eyeIcon2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
+              <span class="err-msg" id="confirmPwErr"></span>
+            </div>
+
+            <div class="field full">
+              <label for="password">Password <span class="req">*</span></label>
+              <div class="pw-wrap">
+                <input type="password" id="password" name="password" autocomplete="new-password" />
+                <button type="button" class="eye-btn" id="eyeBtn" aria-label="Toggle password visibility">
+                  <svg id="eyeIcon1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="strength-bar">
+                <span id="sb1"></span>
+                <span id="sb2"></span>
+                <span id="sb3"></span>
+                <span id="sb4"></span>
+              </div>
+              <div class="strength-label" id="strengthLabel"></div>
+              <span class="err-msg" id="passwordErr"></span>
+            </div>
+
+            <!-- Password Requirements Checklist -->
+            <div class="full">
+              <div class="pw-checklist">
+                <p class="checklist-title">Password requirements</p>
+                <ul>
+                  <li id="rLen">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+                    At least 8 characters
+                  </li>
+                  <li id="rUpper">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+                    One uppercase letter
+                  </li>
+                  <li id="rLower">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+                    One lowercase letter
+                  </li>
+                  <li id="rNum">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+                    One number
+                  </li>
+                  <li id="rSpec">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+                    One special character
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div class="terms-row">
+        <input type="checkbox" id="terms" name="terms" />
+        <label for="terms">I agree to the Terms &amp; Conditions and Privacy Policy of InnoLift Ventures.</label>
+      </div>
+      <span class="err-msg" id="termsErr"></span>
+
+      <button type="submit" class="btn-primary" id="submitBtn" disabled>Create Account</button>
+      <button type="button" class="btn-secondary" id="resetBtn">Clear form and start over</button>
+
+    </form>
+
+    <!-- Success Summary Card -->
+    <div class="summary-card" id="summaryCard">
+      <div class="summary-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h2>Registration successful!</h2>
+      <p>Here's a summary of your submitted details.</p>
+      <div class="summary-grid">
+        <div class="summary-item"><label>Full Name</label><span id="sumName"></span></div>
+        <div class="summary-item"><label>Date of Birth</label><span id="sumDob"></span></div>
+        <div class="summary-item"><label>Gender</label><span id="sumGender"></span></div>
+        <div class="summary-item"><label>Email</label><span id="sumEmail"></span></div>
+        <div class="summary-item"><label>Phone</label><span id="sumPhone"></span></div>
+        <div class="summary-item"><label>Username</label><span id="sumUsername"></span></div>
+        <div class="summary-item" style="grid-column: 1 / -1"><label>Address</label><span id="sumAddress"></span></div>
+      </div>
+      <button type="button" class="btn-secondary" id="newRegBtn" style="max-width: 280px; margin: 0 auto;">
+        ← Register another user
+      </button>
+    </div>
+
+  </div><!-- /.page-wrapper -->
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
